@@ -11,11 +11,11 @@
 
 <body onload="initGame(4,2,'.Easy')">
     <div class="difficulty">
-        <h4>choose difficulty</h4><br>
-        
+        <h1>Mine Sweeper</h1>
+        <h4>choose difficulty</h4>
         <button class="diff Easy" onclick= "initGame(4,2,'.Easy')"></button><span>Easy</span>
-        <button class="diff Normal" onclick= "initGame(8,9,'.Normal')"></button><span>Normal</span>
-        <button class="diff Hard" onclick= "initGame(16,51,'.Hard')"></button><span>Hard</span>
+        <button class="diff Normal" onclick= "initGame(8,14,'.Normal')"></button><span>Normal</span>
+        <button class="diff Hard" onclick= "initGame(12,32,'.Hard')"></button><span>Hard</span>
     </div><br>
      <div class = "Helper">   
         <div class="right">
@@ -32,11 +32,22 @@
         </div>
     </div><br>
     <div class="game-over"></div>
-    <div class="board-container" oncontextmenu="return false;"></div>
+    <div class="board-and-face">
+        <div class="faces" onclick="initGame(gSize,gMineNum,gElement)"><img class="face" src="img/faceStart.png"></div>
+        <div class="hints-help">
+            <div class="hints"></div>
+            <div class="help"><button class="safe-click" onclick="safeClick()">safe click</button></div>
+            <p id="safe-click"></p>
+        </div>
+        <div class="board-container" oncontextmenu="return false;"></div>
+    </div>
 
 
     <script src="js/utils.js"></script>
+    <script src="js/hints.js"></script>
+    <script src="js/lifes.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/mines.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,7 @@ body{
   width: 80%;
   margin-left: 10%;
   margin-top: 10%;
+  background-color: rgb(237, 235, 245);
 }
 
 .Helper{
@@ -14,18 +15,18 @@ body{
   text-align: center;
   border: 1px solid black;
   margin: 20px;
-  background-color: rgb(240, 89, 220);
-  margin-left: 50px;
-  margin-right: 50px;
+  background-color: rgb(204, 198, 198);
+  margin-left:auto;
+  margin-right: auto;
   border-radius: 25px;
 }
 
 .difficulty,.game-over{
   text-align: center;
   border: 1px solid black;
-  background-color: rgb(240, 89, 220);
-  margin-left: 200px;
-  margin-right: 200px;
+  background-color: rgb(204, 198, 198);
+  margin-left:auto;
+  margin-right: auto;
   border-radius: 25px;
 }
 
@@ -52,8 +53,10 @@ img{
 }
 
 .board-container{
-  margin-top: 5%;
-  margin-left: 35%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: auto;
+  margin-right: auto;
   border: 4px solid black;
   width:max-content;
 }
@@ -75,6 +78,60 @@ td{
 
 .game-over{
   display: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: larger;
+  background-color: red;
+}
+
+.board-game{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.face{
+  height: 26px;
+  width: 50px;
+}
+
+.faces{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 0%;
+}
+
+.new-game{
+  border-radius: 25px;
+  background-color: yellow;
+}
+
+.new-game:hover{
+  background-color: rgb(211, 211, 0);
+  cursor: pointer;
+}
+
+.board-and-face{
+  border: 4px solid black;
+  height: fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(218, 218, 218);
+}
+
+.hints-help{
+  display: flex;
+}
+
+.help{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+}
+
+.safe-click{
+  background-color: blue;
+  color: white;
 }
 
 

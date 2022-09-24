@@ -5,7 +5,7 @@ gElPrePressedButton.style.backgroundColor = 'black'
 
 function renderBoard(board,selector) {
 
-    var strHTML = '<table border="0"><tbody>'
+    var strHTML = '<table class ="board-game" border="0"><tbody>'
     for (var i = 0; i < board.length; i++) {
 
         strHTML += '<tr>'
@@ -36,8 +36,8 @@ function changeDiff(size,mineNum,element){
     if(gGame.isOn){
         gLevel.SIZE = size
         gLevel.MINES = mineNum
-        mineNum === 2 ? glifes = 1 : glifes = 3 
-        gElLife.innerHTML = glifes
+        mineNum === 2 ? glifes = 1 : glifes = 3
+        lifeRender() 
         diffButtonColor(element)
         gElMinesLeft.innerHTML = gLevel.MINES
         gBoard = buildBoard(gLevel)
@@ -66,17 +66,10 @@ function getRandomColor() {
     return color;
 }
 
-
-function minesInArea(board, rowIdxStart, rowIdxEnd, colIdxStart, colIdxEnd){
-    var mineInArea = 0
-
-    for(var i = rowIdxStart; i <= rowIdxEnd; i++){
-        for(var j = colIdxStart; j <= colIdxEnd ; j++){
-            if(board[i][j].isMine) mineInArea++
-        }
-    }
-    if(mineInArea === 0) mineInArea = EMPTY
-    return mineInArea
+function gGameReset(){
+    gGame.markedCount = 0
+    gGame.shownCount = 0
+    gGame.secsPassed = 0
 }
 
 
