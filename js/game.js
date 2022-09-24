@@ -137,16 +137,18 @@ function cellClicked(row, col){
 
 function cellMarked(row,col){
     var elCell = document.querySelector('.cell-' + row + '-' + col)
-    if(!gBoard[row][col].isMarked){
-        elCell.innerHTML = FLAG
-        gBoard[row][col].isMarked = true
-        gGame.markedCount++
-    }else{
-        elCell.innerText = gBoard[row][col].minesAroundCount
-        gBoard[row][col].isMarked = false
-        gGame.markedCount--
+    if(gGame.isOn){
+        if(!gBoard[row][col].isMarked){
+            elCell.innerHTML = FLAG
+            gBoard[row][col].isMarked = true
+            gGame.markedCount++
+        }else{
+            elCell.innerText = gBoard[row][col].minesAroundCount
+            gBoard[row][col].isMarked = false
+            gGame.markedCount--
+        }
+        checkGameOver()
     }
-    checkGameOver()
 }
 
 function checkGameOver(){
