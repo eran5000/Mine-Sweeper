@@ -1,5 +1,5 @@
 'use strict'
-const LIFE = '<img src="/img/life.png">'
+const LIFE = '<img src="./img/life.png">'
 
 var glifes = 0
 var gElLife = document.getElementById("lifesLeft")
