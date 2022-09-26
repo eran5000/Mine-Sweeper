@@ -68,7 +68,7 @@ function hintFinish(){
 function hintRender(){
     gElHint.innerHTML = ' '
     for(var i = 0; i < gHintUses; i++){
-        gElHint.innerHTML += `<button class="hint` + i + `" onclick="showHint('.hint` + i + `')"><img class="lightbulb" src="./img/hint.png"></button>`
+        gElHint.innerHTML += `<button class="hint` + i + `" onclick="showHint('.hint` + i + `')">` + HINT + `</button>`
     }
 }
 
