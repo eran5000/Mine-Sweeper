@@ -1,6 +1,6 @@
 'use strict'
-const HINT = '<img class="lightbulb" src="img/hint.png">'
-const HINTUSE = '<img class="lightbulb" src="img/hintuse.png">'
+const HINT = '<img class="lightbulb" src="/img/hint.png">'
+const HINTUSE = '<img class="lightbulb" src="/img/hintuse.png">'
 const gElHint = document.querySelector('.hints')
 
 var gHintUses
