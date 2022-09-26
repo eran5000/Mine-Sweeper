@@ -1,9 +1,9 @@
 'use strict'
-const FLAG = '<img src="img/flag.png">'
+const FLAG = '<img src="/img/flag.png">'
 const EMPTY = ' '
-const FACESTART = '<img class="face" src="img/faceStart.png">'
-const FACEWIN = '<img class="face" src="img/faceWin.png">'
-const FACELOSE = '<img class="face" src="img/faceLose.png">'
+const FACESTART = '<img class="face" src="/img/faceStart.png">'
+const FACEWIN = '<img class="face" src="/img/faceWin.png">'
+const FACELOSE = '<img class="face" src="/img/faceLose.png">'
 const gElFace = document.querySelector('.faces')
 
 
