@@ -78,7 +78,7 @@ function minesReveal(){
         for(var j = 0; j < gBoard[0].length; j++){
             if(gBoard[i][j].isMine){
                 var location = {i : i, j : j}
-                renderCell(location, '<img src="/Img/mine.png">')
+                renderCell(location, '<img src="./Img/mine.png">')
             } 
         }
     }
