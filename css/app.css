@@ -23,7 +23,7 @@ body{
   margin-left:auto;
   margin-right: auto;
   padding-top: 5%;
-  background-image: url('/Img/pinnedStickyNote.png');
+  background-image: url('./Img/pinnedStickyNote.png');
   background-size: auto;
   background-repeat: no-repeat;
   background-position:center;
@@ -35,7 +35,7 @@ body{
   height: 180px;
   margin-left:auto;
   margin-right: auto;
-  background-image: url('/Img/rectangleStickeyNote.png');
+  background-image: url('./Img/rectangleStickeyNote.png');
   background-size: auto;
   background-repeat: no-repeat;
   background-position:center;
