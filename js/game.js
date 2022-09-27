@@ -34,10 +34,10 @@ function initGame(size,mineNum,element){
     safeClicks = 3
     gElSafeClick.innerHTML = safeClicks
     gElFace.innerHTML = FACESTART
-    movesArr = []
     isHintUse = false
     gHintUses = 3
     hintRender()
+    movesArr = []
     gSize = size
     gMineNum = mineNum
     gElement = element

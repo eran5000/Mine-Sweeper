@@ -27,7 +27,7 @@ function hintShown(rowIdxStart, rowIdxEnd, colIdxStart, colIdxEnd){
 }
 
 function showHint(element){
-    if(gFirstClick){
+    if(gFirstClick && gGame.isOn){
         var elLightBulb
         elLightBulb = document.querySelector(element)
         if(isHintUse){

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body onload="initGame(4,2,'.Easy')" background="./Img/billboard.jpg">
+<body onload="initGame(4,2,'.Easy')">
     <div class="difficulty">
         <h1>Mine Sweeper</h1>
         <h4>choose difficulty</h4>
@@ -33,7 +33,7 @@
         </div>
     </div><br>
     <div class="game-over"></div>
-    <div class="undo"><button onclick="undo()"><img src="./Img/undo.png"></button></div>
+    <div class="undo"><button class="undo-butt" onclick="undo()"><img src="./Img/undo.png"></button></div>
     <div class="interface">
         <div class="upper-row">
             <div class="faces" onclick="initGame(gSize,gMineNum,gElement)"><img class="face" src="./Img/faceStart.png"></div>
