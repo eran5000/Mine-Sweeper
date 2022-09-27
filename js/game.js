@@ -5,6 +5,9 @@ const FACESTART = '<img class="face" src="./Img/faceStart.png">'
 const FACEWIN = '<img class="face" src="./Img/faceWin.png">'
 const FACELOSE = '<img class="face" src="./Img/faceLose.png">'
 const gElFace = document.querySelector('.faces')
+var gBestScoreEasy = 999
+var gBestScoreNormal = 999
+var gBestScoreHard = 999
 
 
 
@@ -44,6 +47,7 @@ function initGame(size,mineNum,element){
     gBoard = changeDiff(gSize,gMineNum,gElement)
     setMinesNegsCount(gBoard)
     renderBoard(gBoard, '.board-container')
+    bestScore()
 }
 
 function buildBoard(level){
@@ -172,6 +176,22 @@ function checkGameOver(){
         gGame.isOn = false
         gElGameOver.innerHTML = `you won<br> <button class="new-game" onclick="initGame(gSize,gMineNum,gElement)">new game</button>`
         gElGameOver.style.display = 'block'
+        switch (gElement) {
+            case '.Easy':
+                if(gBestScoreEasy > gGame.secsPassed) gBestScoreEasy = gGame.secsPassed
+                localStorage.removeItem('highScoreEasy')
+                break;
+            case '.Normal':
+                if(gBestScoreNormal > gGame.secsPassed) gBestScoreNormal = gGame.secsPassed
+                localStorage.removeItem('highScoreNormal')
+                break;
+            case '.Hard':
+                if(gBestScoreHard > gGame.secsPassed) gBestScoreHard = gGame.secsPassed
+                localStorage.removeItem('highScoreHard')
+                break;
+        
+        }
+        
     }
 
 }
@@ -213,6 +233,29 @@ function expandShown(row, col) {
         expandShown( row, col+1 );
     } else {
         return;
+    }
+}
+
+function bestScore(){
+    switch (gElement) {
+        case '.Easy':
+            localStorage.setItem('highScoreEasy',gBestScoreEasy)
+            var data = localStorage.getItem('highScoreEasy')
+            var elBestScore = document.querySelector('.best-score')
+            elBestScore.innerHTML = 'best time: ' + data + ' sec'
+            break;
+        case '.Normal':
+            localStorage.setItem('highScoreNormal',gBestScoreNormal)
+            var data = localStorage.getItem('highScoreNormal')
+            var elBestScore = document.querySelector('.best-score')
+            elBestScore.innerHTML = 'best time: ' + data + ' sec'
+            break;
+        case '.Hard':
+            localStorage.setItem('highScoreHard',gBestScoreHard)
+            var data = localStorage.getItem('highScoreHard')
+            var elBestScore = document.querySelector('.best-score')
+            elBestScore.innerHTML = 'best time: ' + data + ' sec'
+            break;
     }
 }
 
