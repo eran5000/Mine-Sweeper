@@ -82,6 +82,7 @@ function cellClicked(row, col){
         changeMineLoc(row,col)
         if(!gFirstClick) gFirstClick = true
         if(!gBoard[row][col].isMine){
+            movesArr.push([])
             expandShown(row, col)
         }else{
             glifes--
@@ -99,6 +100,7 @@ function cellClicked(row, col){
                 var cell = '.cell-' + row + '-' + col
                 var elCell = document.querySelector(cell)
                 elCell.style.backgroundColor = 'red'
+                // movesArr[movesArr.length - 1].push({row: row, col: col, change:'lifeLost'})
             }
             
         }
@@ -137,23 +139,26 @@ function cellClicked(row, col){
 
 function cellMarked(row,col){
     var elCell = document.querySelector('.cell-' + row + '-' + col)
+    movesArr.push([])
     if(gGame.isOn){
         if(!gBoard[row][col].isMarked){
             elCell.innerHTML = FLAG
             gBoard[row][col].isMarked = true
-            gGame.markedCount++
+            movesArr[movesArr.length - 1].push({row:row, col:col, change : 'mark'})
         }else{
-            elCell.innerText = gBoard[row][col].minesAroundCount
+            elCell.innerHTML = gBoard[row][col].minesAroundCount
             gBoard[row][col].isMarked = false
-            gGame.markedCount--
+            movesArr[movesArr.length - 1].push({row:row, col:col, change : 'unmark'})
         }
         checkGameOver()
     }
 }
 
 function checkGameOver(){
+    gGame.markedCount = 0
     for(var i = 0 ; i < gBoard.length;i++){
         for(var j = 0; j<gBoard[0].length;j++){
+            if(gBoard[i][j].isMarked && gBoard[i][j].isMine) gGame.markedCount++
             if(gBoard[i][j].isShown === true && gBoard[i][j].isMine === true){
                 gElFace.innerHTML = FACELOSE
                 gGame.isOn = false
@@ -192,6 +197,7 @@ function expandShown(row, col) {
         gGame.shownCount++
         elCell.style.backgroundColor = 'grey'
         elCell.style.color = 'white'
+        movesArr[movesArr.length - 1].push({row:row, col:col, change : 'shown'})
     }
     if ( gBoard[row][col].minesAroundCount === EMPTY && !gBoard[row][col].isShown) {
         gBoard[row][col].isShown = true;
@@ -200,6 +206,7 @@ function expandShown(row, col) {
         gGame.shownCount++
         elCell.style.backgroundColor = 'grey'
         elCell.style.color = 'white'
+        movesArr[movesArr.length - 1].push({row:row, col:col, change : 'shown'})
         expandShown( row+1, col );
         expandShown( row-1, col );
         expandShown( row, col-1 );

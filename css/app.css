@@ -1,33 +1,47 @@
+
 body{
   width: 80%;
   margin-left: 10%;
   margin-top: 10%;
-  background-color: rgb(237, 235, 245);
+  background-size:cover;
+  margin-top: 2%;
 }
 
 .Helper{
   display: flex;
+  margin-bottom: 0%;
+  margin-top: 0%;
 }
 
 .right,.middle,.left{
   margin-right: 0;
-  width: 30%;
+  width: 200px;
+  height: 180px;
   text-align: center;
-  border: 1px solid black;
-  margin: 20px;
-  background-color: rgb(204, 198, 198);
+  margin: 10px;
   margin-left:auto;
   margin-right: auto;
-  border-radius: 25px;
+  padding-top: 5%;
+  background-image: url('/Img/pinnedStickyNote.png');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position:center;
+
 }
 
 .difficulty,.game-over{
   text-align: center;
-  border: 1px solid black;
-  background-color: rgb(204, 198, 198);
+  height: 180px;
   margin-left:auto;
   margin-right: auto;
-  border-radius: 25px;
+  background-image: url('/Img/rectangleStickeyNote.png');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position:center;
+  padding-top: 5%;
+  margin-bottom: 0%;
+  margin-top: 5%;
+
 }
 
 .diff{
@@ -50,6 +64,7 @@ img{
   padding: 0;
   margin: 0;
   border: 0px;
+  
 }
 
 .board-container{
@@ -65,14 +80,15 @@ td{
   height: 30px;
   width: 30px;
   border: 4px solid black;
+  background-color: white;
 }
 
 
 .cell{
   height: 35px;
   width: 40px;
-  background-color: rgb(204, 198, 198);
-  color: rgb(204, 198, 198);
+  background-color: white;
+  color: white;
   cursor: pointer;
 }
 
@@ -80,7 +96,7 @@ td{
   display: none;
   font-family: 'Courier New', Courier, monospace;
   font-size: larger;
-  background-color: red;
+  padding-top: 5%;
 }
 
 .board-game{
@@ -110,30 +126,47 @@ td{
   cursor: pointer;
 }
 
-.board-and-face{
+.interface{
   border: 4px solid black;
   height: fit-content;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(218, 218, 218);
+  background-color: white;
 }
 
 .hints-help{
   display: flex;
+  height: 40px;
 }
 
 .help{
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 10px;
+  padding: auto;
 }
 
 .safe-click{
   background-color: blue;
   color: white;
+  cursor: pointer;
 }
 
+.upper-row{
+  background-color: red;
+}
+
+.hint{
+  background-color: red;
+  cursor: pointer;
+}
+
+.undo{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body onload="initGame(4,2,'.Easy')">
+<body onload="initGame(4,2,'.Easy')" background="/Img/billboard.jpg">
     <div class="difficulty">
         <h1>Mine Sweeper</h1>
         <h4>choose difficulty</h4>
@@ -32,12 +32,15 @@
         </div>
     </div><br>
     <div class="game-over"></div>
-    <div class="board-and-face">
-        <div class="faces" onclick="initGame(gSize,gMineNum,gElement)"><img class="face" src="img/faceStart.png"></div>
-        <div class="hints-help">
-            <div class="hints"></div>
-            <div class="help"><button class="safe-click" onclick="safeClick()">safe click</button></div>
-            <p id="safe-click"></p>
+    <div class="undo"><button onclick="undo()"><img src="/Img/undo.png"></button></div>
+    <div class="interface">
+        <div class="upper-row">
+            <div class="faces" onclick="initGame(gSize,gMineNum,gElement)"><img class="face" src="img/faceStart.png"></div>
+            <div class="hints-help">
+                <div class="hints"></div>
+                <div class="help"><button class="safe-click" onclick="safeClick()">safe click</button></div>
+                <p id="safe-click"></p>
+            </div>
         </div>
         <div class="board-container" oncontextmenu="return false;"></div>
     </div>
@@ -48,6 +51,7 @@
     <script src="js/lifes.js"></script>
     <script src="js/game.js"></script>
     <script src="js/mines.js"></script>
+    <script src="js/undo.js"></script>
 </body>
 
 </html>

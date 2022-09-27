@@ -1,6 +1,6 @@
 'use strict'
-const HINT = '<img class="lightbulb" src="./Img/hint.png">'
-const HINTUSE = '<img class="lightbulb" src="./Img/hintuse.png">'
+const HINT = '<img class="lightbulb" src="/Img/hint.png">'
+const HINTUSE = '<img class="lightbulb" src="/Img/hintuse.png">'
 const gElHint = document.querySelector('.hints')
 
 var gHintUses
@@ -55,8 +55,8 @@ function hintFinish(){
                 cell = '.cell-' + i + '-' + j
                 elCell = document.querySelector(cell)
                 if(elCell.style.backgroundColor === 'yellow'){
-                    elCell.style.backgroundColor = 'rgb(204, 198, 198)'
-                    elCell.style.color = 'rgb(204, 198, 198)'
+                    elCell.style.backgroundColor = 'white'
+                    elCell.style.color = 'white'
                 }
             }
         }
@@ -68,7 +68,7 @@ function hintFinish(){
 function hintRender(){
     gElHint.innerHTML = ' '
     for(var i = 0; i < gHintUses; i++){
-        gElHint.innerHTML += `<button class="hint` + i + `" onclick="showHint('.hint` + i + `')">` + HINT + `</button>`
+        gElHint.innerHTML += `<button class="hint hint` + i + `" onclick="showHint('.hint` + i + `')">` + HINT + `</button>`
     }
 }
 
